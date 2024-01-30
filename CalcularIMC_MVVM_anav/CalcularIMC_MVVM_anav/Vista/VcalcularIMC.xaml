@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalcularIMC_MVVM_anav.Vista.VcalcularIMC">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Css/CalcularIMCStyles.css"/>
+
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Frame Padding="24" Margin="0,20,0,0" StyleClass="titulo">
+            <Label Text="Calcular IMC" HorizontalTextAlignment="Center" StyleId="encabezado" />
+        </Frame>
+        <Label Text="Peso" Padding="0,30,0,0"/>
+        <Entry Placeholder="Peso" PlaceholderColor="Red" x:Name="Peso" Keyboard="Numeric" Text="{Binding Peso}"/>
+        <Label Text="Altura"/>
+        <Entry Placeholder="Altura" PlaceholderColor="Red" x:Name="Altura" Keyboard="Numeric" Text="{Binding Altura}"/>
+
+        <Label StyleId="resultado" Text="{Binding Imc}"/>
+        <Label StyleId="resultado" Text="{Binding Mensaje}"/>
+
+        <Button Text="calcular IMC" StyleClass="calcular" CornerRadius="30" TextColor="Black"
+                VerticalOptions="EndAndExpand" Margin="0,0,0,100" Command="{Binding CalcularIMCCommand}"/>
+
+    </StackLayout>
+
+</ContentPage>
+
+
+
